@@ -4,6 +4,16 @@ self.addEventListener("install", event => {
 			return cache.addAll([
 				"/",
 		        "/index.html",
+		        "/restaurant.html?id=1",
+		        "/restaurant.html?id=2",
+		        "/restaurant.html?id=3",
+		        "/restaurant.html?id=4",
+		        "/restaurant.html?id=5",
+		        "/restaurant.html?id=6",
+		        "/restaurant.html?id=7",
+		        "/restaurant.html?id=8",
+		        "/restaurant.html?id=9",
+		        "/restaurant.html?id=10",
 		        "/img/1.jpg",
 		        "/img/2.jpg",
 		        "/img/3.jpg",
@@ -33,6 +43,6 @@ self.addEventListener("fetch", event => {
     caches.match(event.request)
       .then((response) => {
         return response || fetch(event.request);
-      })
-  );
+      }));
+  //);
 });
